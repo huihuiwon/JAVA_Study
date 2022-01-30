@@ -25,6 +25,7 @@ res.append(3+"\n");
 System.out.println(res);
 ```
 <br/>
+
 ## 브루트 포스
 - 완전 탐색. 가능한 경우를 모두 탐색
 
