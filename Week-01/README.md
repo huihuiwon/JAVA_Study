@@ -32,3 +32,10 @@ System.out.println(res);
 <br/>
 
 ### 2.체스판 다시 칠하기 
+
+![image](https://user-images.githubusercontent.com/57666289/151687989-9c4d05c3-f67c-4157-a14f-235c24bf0816.png)
+![image](https://user-images.githubusercontent.com/57666289/151687995-320089a2-3931-43a5-a11b-5e010bb2b1bb.png)
+![image](https://user-images.githubusercontent.com/57666289/151687999-a25fd3fe-07c8-4b33-8c57-b297f7debbdf.png)
+
+
+
