@@ -37,5 +37,13 @@ System.out.println(res);
 ![image](https://user-images.githubusercontent.com/57666289/151687995-320089a2-3931-43a5-a11b-5e010bb2b1bb.png)
 ![image](https://user-images.githubusercontent.com/57666289/151687999-a25fd3fe-07c8-4b33-8c57-b297f7debbdf.png)
 
+<br/>
 
+### 3. 영화감독 숌
 
+![image](https://user-images.githubusercontent.com/57666289/151688291-60e48fd6-4fc2-4b4b-aed5-737ced8a661b.png)
+
+- 반복문 돌아야 하는 수가 작고, 반복문 안의 코드가 간결하고 시간제한이 넉넉하면 그냥 브루트 포스로 풀자
+- 괜히 규칙을 찾으려고 하는게 코드도 더 길어지고 시간도 더 오래걸릴 수 있다
+
+(브루트포스 문제인지 어떻게 알아차릴 수 있을까...??)
