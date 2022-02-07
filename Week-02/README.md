@@ -21,3 +21,7 @@
 ![image](https://user-images.githubusercontent.com/57666289/152686255-13ab32f7-c7b1-46c8-aa7a-2bf276eab66e.png)
 
 ![image](https://user-images.githubusercontent.com/57666289/152686263-e16196fb-b98a-49b5-a13a-6daf60b50e89.png)
+
+### N-Queen
+
+![image](https://user-images.githubusercontent.com/57666289/152758985-d6660abd-bf33-45b3-ae44-b3f346c36ba7.png)
