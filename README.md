@@ -17,3 +17,4 @@
 |------|---|---|---|
 |1주차|[하노이탑](https://www.acmicpc.net/problem/11729)|[체스판 다시 칠하기](https://www.acmicpc.net/problem/1018)|[영화감독 숌](https://www.acmicpc.net/problem/1436)|
 |2주차|[단어정렬](https://www.acmicpc.net/problem/1181)|[N과M(4)](https://www.acmicpc.net/problem/15652)|[N-Queen](https://www.acmicpc.net/problem/9663)|
+|3주차|[쉬운계단수](https://www.acmicpc.net/problem/10844)|[LCS](https://www.acmicpc.net/problem/9251)|[주유소](https://www.acmicpc.net/problem/13305)
