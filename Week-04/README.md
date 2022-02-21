@@ -15,7 +15,7 @@
 
 <br/>
 
-## 오큰수
+## 오큰수 (아직 이해하는 중..)
 
 ![image](https://user-images.githubusercontent.com/57666289/154948582-f0abc973-5fa0-4414-91d5-676997887e51.png)
 
