@@ -17,3 +17,6 @@
 
 ## 오큰수
 
+![image](https://user-images.githubusercontent.com/57666289/154948582-f0abc973-5fa0-4414-91d5-676997887e51.png)
+
+![image](https://user-images.githubusercontent.com/57666289/154948598-61861385-1a21-48e7-8674-2f2fa56d2c55.png)
