@@ -10,9 +10,3 @@
 3. 코드와 함께 해석 작성
 </br>
 </br>
-
-## 📆 스터디
-
-||문제1|문제2|문제3|
-|------|---|---|---|
-|1주차|[하노이탑](https://www.acmicpc.net/problem/11729)|[체스판 다시 칠하기](https://www.acmicpc.net/problem/1018)|[영화감독 숌](https://www.acmicpc.net/problem/1436)|
