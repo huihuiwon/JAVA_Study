@@ -21,3 +21,4 @@
 |4주차|[검문](https://www.acmicpc.net/problem/2981)|[이항계수2](https://www.acmicpc.net/problem/11051)|[오큰수](https://www.acmicpc.net/problem/17298)
 |5주차|[균형잡힌세상](https://www.acmicpc.net/problem/4949)|[카드2](https://www.acmicpc.net/problem/2164)|[AC](https://www.acmicpc.net/problem/5430)
 |6주차|[종이의개수](https://www.acmicpc.net/problem/1780)|[행렬제곱](https://www.acmicpc.net/problem/10830)|[랜선자르기](https://www.acmicpc.net/problem/1654)
+|7주차|[가운데를 말해요](https://www.acmicpc.net/problem/1655)|[내리막길](https://www.acmicpc.net/problem/1520)|[동전1](https://www.acmicpc.net/problem/2293)
