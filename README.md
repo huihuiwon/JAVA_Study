@@ -22,3 +22,4 @@
 |5주차|[균형잡힌세상](https://www.acmicpc.net/problem/4949)|[카드2](https://www.acmicpc.net/problem/2164)|[AC](https://www.acmicpc.net/problem/5430)
 |6주차|[종이의개수](https://www.acmicpc.net/problem/1780)|[행렬제곱](https://www.acmicpc.net/problem/10830)|[랜선자르기](https://www.acmicpc.net/problem/1654)
 |7주차|[가운데를 말해요](https://www.acmicpc.net/problem/1655)|[내리막길](https://www.acmicpc.net/problem/1520)|[동전1](https://www.acmicpc.net/problem/2293)
+|8주차|[단지번호붙이기](https://www.acmicpc.net/problem/2667)|[토마토](https://www.acmicpc.net/problem/7576)|[이분그래프](https://www.acmicpc.net/problem/1707)
