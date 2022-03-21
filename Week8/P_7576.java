@@ -3,63 +3,51 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-/*단지번호 붙이기 */
-public class P_2667 {
-	private static int[][] map;
-	private static boolean[][] visited;
-	private static int aptNum = 0; //총 단지수 
-	static int[] dy = {-1,0,1,0};
-	static int[] dx = {0,1,0,-1};
-	static int n;
-	static ArrayList al = new ArrayList();
-	
-	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		n = sc.nextInt();
-		map = new int[n][n];
-		visited = new boolean[n][n];
-		for(int i = 0 ; i < n ; i++) {
-			String input = sc.next();
-			for(int j = 0 ; j < n ; j++) {
-				map[i][j] = input.charAt(j)-'0';
-			}
-		}
-		for(int i = 0 ; i < n ;i++) {
-			for(int j = 0 ; j < n ; j++) {
-				if(map[i][j] ==1 && !visited[i][j]) {
-					aptNum=1;
-					dfs(i,j);
-					al.add(aptNum);
-				}
-			}
-		}
-		Collections.sort(al);
-		bw.write(al.size()+"\n");
-		for(int i = 0 ; i < al.size();i++) {
-			bw.write(al.get(i)+"\n");
-		}
-		bw.flush();
-		bw.close();
 
-	}
-	private static int dfs(int x,int y) {
-		visited[x][y] = true;
-		int ny,nx;
-		for(int i = 0 ; i < 4 ; i++) {
-			nx = x +dy[i];
-			ny = y+ dx[i];
-			if(ny>=0 && ny<n && nx>=0 && nx<n) {
-				if(!visited[nx][ny] && map[nx][ny]==1) {
-					dfs(nx,ny);
-					aptNum++;
-				}
-			}
-			
-		}
-		return aptNum;
-	}
+/*토마토 */
+public class P_7576 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] dy = { -1, 1, 0, 0 };
+        int[] dx = { 0, 0, -1, 1 };
+        int M = sc.nextInt(), N = sc.nextInt();
+
+        int[][] arr = new int[N][M];
+        int cnt = 0, days = 0;
+        Queue<int[]> que = new LinkedList<>();
+
+        for (int n = 0; n < N; n++)
+            for (int m = 0; m < M; m++) {
+                arr[n][m] = sc.nextInt();
+                if (arr[n][m] == 1)
+                    que.add(new int[] { n, m });
+                else if (arr[n][m] == 0)
+                    cnt++;
+            }
+
+        while (cnt > 0 && !que.isEmpty()) {
+            for (int s = que.size(); s > 0; s--) {
+                int[] cur = que.poll();
+
+                for (int k = 0; k < 4; k++) {
+                    int ny = cur[0] + dy[k];
+                    int nx = cur[1] + dx[k];
+
+                    if (ny < 0 || nx < 0 || ny >= N || nx >= M || arr[ny][nx] != 0)
+                        continue;
+
+                    cnt--;
+                    arr[ny][nx] = 1;
+                    que.add(new int[] { ny, nx });
+                }
+            }
+            days++;
+        }
+        System.out.println(cnt == 0 ? days : -1);
+
+    }
 }
+ 
