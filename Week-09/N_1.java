@@ -3,9 +3,7 @@ package kakao.week9;
 import java.util.*;
 import java.util.Map.Entry;
 
-//½Å°í°á°ú ¹Ş±â
-//hashSet : https://crazykim2.tistory.com/474#text6
-//hashSet, hashMap Â÷ÀÌ  https://postitforhooney.tistory.com/entry/JavaHashSet%EA%B3%BC-HashMap
+//ì‹ ê³ ê²°ê³¼ ë°›ê¸°
 
 public class N_1 {
 	public int[] solution(String[] id_list, String[] report, int k) {
@@ -20,15 +18,15 @@ public class N_1 {
         
         for(String s:report){
             String res[] = s.split(" ");
-            map.get(res[1]).add(res[0]); //´©±¸ÇÑÅ× ½Å°í¹Ş¾Ò´ÂÁö
+            map.get(res[1]).add(res[0]); //ëˆ„êµ¬í•œí…Œ ì‹ ê³ ë°›ì•˜ëŠ”ì§€
         }
         for(Entry<String,HashSet<String>> entry: map.entrySet()){
             HashSet<String> aa=entry.getValue();
             if(aa.size()>=k){
                 for(String s:aa){
-                    /*ÇØ´ç ¹®ÀÚ¿­ÀÇ index¸¦ ¾Ë¾Æ³»¼­(indexOf) answer ¿¡ °ª ³Ö¾îÁÖ´Â°Ô ºü¸¦±î, 
-                    HashMap ¿¡ index ¹Ì¸® ³Ö¾î³õ°í get ÇØ¼­ ³Ö¾îÁÖ´Â°Ô ºü¸¦±î
-                    => HashMap ÀÌ ´õ ºü¸§*/ 
+                    /*í•´ë‹¹ ë¬¸ìì—´ì˜ indexë¥¼ ì•Œì•„ë‚´ì„œ(indexOf) answer ì— ê°’ ë„£ì–´ì£¼ëŠ”ê²Œ ë¹ ë¥¼ê¹Œ, 
+                    HashMap ì— index ë¯¸ë¦¬ ë„£ì–´ë†“ê³  get í•´ì„œ ë„£ì–´ì£¼ëŠ”ê²Œ ë¹ ë¥¼ê¹Œ
+                    => HashMap ì´ ë” ë¹ ë¦„*/ 
                     //answer[Arrays.asList(id_list).indexOf(s)] +=1; 
                     
                     answer[index.get(s)]+=1;
