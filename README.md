@@ -24,3 +24,4 @@
 |7주차|[가운데를 말해요](https://www.acmicpc.net/problem/1655)|[내리막길](https://www.acmicpc.net/problem/1520)|[동전1](https://www.acmicpc.net/problem/2293)
 |8주차|[단지번호붙이기](https://www.acmicpc.net/problem/2667)|[토마토](https://www.acmicpc.net/problem/7576)|[이분그래프](https://www.acmicpc.net/problem/1707)
 |9주차|[신고결과받기](https://programmers.co.kr/learn/courses/30/lessons/92334)|[문자열압축](https://programmers.co.kr/learn/courses/30/lessons/60057)|[오픈채팅방](https://programmers.co.kr/learn/courses/30/lessons/42888)
+|10주차|[로또의최고순위와최저순위](https://programmers.co.kr/learn/courses/30/lessons/77484)|[카카오프렌즈컬러링북](https://programmers.co.kr/learn/courses/30/lessons/1829)|[단체사진찍기](https://programmers.co.kr/learn/courses/30/lessons/1835)
