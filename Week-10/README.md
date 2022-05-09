@@ -61,7 +61,7 @@ public int bfs(int[][] picture,int m,int n, int x,int y){
                 
                 if(n_x>=0&&n_x<m&&n_y>=0&&n_y<n){
                     if(!check[n_x][n_y] && picture[n_x][n_y]==picture[x][y]){
-												//check가 false고, picture 값이 pos에서 picture값과 동일하면 탐색
+			//check가 false고, picture 값이 pos에서 picture값과 동일하면 탐색
                         q.add(new int[]{n_x,n_y});
                         check[n_x][n_y]=true;
                         ans+=1;
