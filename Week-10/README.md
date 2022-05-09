@@ -27,7 +27,55 @@ if (IntStream.of(win_nums).anyMatch(x -> x == a)){
 - for문을 다 돌고 난 뒤 answer[0]+=answer[1]  .  answer[0]에 0을 제외하고 맞힌 숫자를 더해준다.
 - 점수에서 순위 구하는 로직 ( 7- 맞은개수) 을 통해 순위 반환
 
+<br/>
+## 카카오프렌즈 컬러링북
 
+영역의 넓이 구하기 → dfs, bfs를 통해 푸는 문제
+
+bfs로 해결
+
+- 방문했는지 체크하기 위한 boolean[][] check 배열 필요
+- 이중 for문으로 picture[i][j]를 보면서, 값이 0보다 크고 check[i][j]==false면 bfs 호출.
+- 현재 위치(x,y) 를 queue에 넣음.
+- queue에서 좌표를 poll하고, 해당 위치에서 상하좌우로 보면서, check가 false이고 picture값이 동일하면 queue에 해당 위치를 넣어주고, check=true로 체크함.
+- 해당 영역의 넓이를 체크할 ans 변수에 +1 해줌.
+- queue에 값이 들어있을 때 까지 반복.
+
+```java
+public int bfs(int[][] picture,int m,int n, int x,int y){
+        int[] dir_x={-1,0,1,0};
+        int[] dir_y={0,-1,0,1};
+        int ans=1;
+        Queue<int[]> q=new LinkedList<int[]>();
+        
+        q.add(new int[]{x,y});
+        check[x][y]=true;
+        
+        while(!q.isEmpty()){
+            int[] pos = q.poll();
+            
+            for(int i=0;i<4;i++){ //해당 위치에서 상하좌우로 탐색.
+                int n_x=pos[0]+dir_x[i];
+                int n_y=pos[1]+dir_y[i];
+                
+                if(n_x>=0&&n_x<m&&n_y>=0&&n_y<n){
+                    if(!check[n_x][n_y] && picture[n_x][n_y]==picture[x][y]){
+												//check가 false고, picture 값이 pos에서 picture값과 동일하면 탐색
+                        q.add(new int[]{n_x,n_y});
+                        check[n_x][n_y]=true;
+                        ans+=1;
+                    }
+                }
+            }
+        }
+        return ans; //해당 영역의 넓이 ans 값 반환.
+    }
+```
+
+- main 함수에서 이중 for문 돌면서 bfs 호출할 때, `numOfArea` (영역 개수) +1 해주고, bfs 반환값이 `maxSizeOfOneArea` (최대 영역 크기) 보다 크면 `maxSizeOfOneArea`에 반환값 넣어줌.
+
+
+<br/>
 
 ## 단체사진 찍기
 
