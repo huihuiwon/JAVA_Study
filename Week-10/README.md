@@ -115,7 +115,7 @@ public static void permutation(int[] arr, int[] out, boolean[] visited, int dept
 
 번외
 
-- 중복 순열
+- 중복 순열 : 서로 다른 n개에서 중복이 가능하게 r개를 뽑아서 정렬하는 경우의 수
 - 조합 : 서로 다른 n개에서 순서 없이 r개를 뽑는 경우의 수
 - 중복 조합 : 서로 다른 n개에서 순서 없이, 중복이 가능하게 r개를 뽑는 경우의 수
 
