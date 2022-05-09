@@ -28,6 +28,7 @@ if (IntStream.of(win_nums).anyMatch(x -> x == a)){
 - 점수에서 순위 구하는 로직 ( 7- 맞은개수) 을 통해 순위 반환
 
 <br/>
+
 ## 카카오프렌즈 컬러링북
 
 영역의 넓이 구하기 → dfs, bfs를 통해 푸는 문제
@@ -76,6 +77,7 @@ public int bfs(int[][] picture,int m,int n, int x,int y){
 
 
 <br/>
+
 
 ## 단체사진 찍기
 
