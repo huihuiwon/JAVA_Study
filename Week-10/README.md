@@ -1,8 +1,7 @@
 ## 10주차 문제 풀이
 
 ### 로또의 최고 순위와 최저 순위
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5583131e-01ef-44e0-9c63-4ba111b9188c/Untitled.png)
-
+![image](https://user-images.githubusercontent.com/57666289/167334380-96a25aa5-5b23-4dc8-9c5a-88e64e14e64a.png)
 0, 1개 → 6 등
 
 나머지 순위 → 7 - (맞은 개수)
