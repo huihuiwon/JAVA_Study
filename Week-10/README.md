@@ -60,7 +60,7 @@ public static void permutation(int[] arr, int[] out, boolean[] visited, int dept
     }
 ```
 
-- 단체사진 찍기 문제는 depth == r 일 때, 조건 data를 일치하는지 확인을 함.
+- 단체사진 찍기 문제는 depth == r 일 때, 조건 data를 만족하는지 확인을 함.
 - 모든 조건을 일치하면 answer +=1를 해주고, answer를 출력해주었다.
 
 번외
