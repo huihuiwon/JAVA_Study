@@ -193,7 +193,7 @@ C : 버스를 타고 이동하는데 걸리는 시간
 
 → 원래 벨만 포드는 cycle이 없는 경우를 전제로 하므로 정점의 수 - 1 만큼 반복하면 되지만, 정점의 수 만큼 반복하면서 마지막 n번째에서 cycle을 체크함
 
-br/>
+<br/>
 				 
 `distance[T] = Math.min(distance[T] , distance[S] + w(S,T))`
 
