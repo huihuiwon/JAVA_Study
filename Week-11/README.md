@@ -156,3 +156,76 @@ class Graph{
 			}
 			sb.append("\n");
 ```				       
+
+<br/>
+	
+## 11657. 타임머신
+
+<br/>
+	
+N개의 도시, 한 도시에 출발해서 다른 도시에 도착하는 버스 M개.
+<br/>
+
+
+각 버스 → A, B, C
+
+A : 시작도시
+
+B : 도착도시
+
+C : 버스를 타고 이동하는데 걸리는 시간
+
+ (C=0 → 순간 이동을 하는 경우 , C<0 → 타임머신으로 시간을 되돌아가는 경우)
+
+- 1번 도시에서 출발해서 나머지 도시로 가는 가장 빠른 시간 구하기
+- 만약 1번 도시에서 출발해 어떤 도시로 가는 과정에서 시간을 무한히 오래 전으로 되돌릴 수 있다면 첫째 줄에 -1을 출력
+    
+    → 음의 가중치가 있는 엣지가 사이클을 형성할 경우
+    
+
+### 벨만 포드
+
+- 음수의 가중치가 나오는 경우 사용 가능
+- `간선의 가중치 + 시작점에서 정점까지의 거리 < 정점의 기존 거리`  이면 거리 업데이트
+- 이 과정을 정점의 수 - 1 번 만큼 반복한다.
+- 만약 정점의 수 보다 많이 반복해서 더 작은 경로를 찾아낸다면, cycle이 존재한다는 뜻이다.
+
+→ 원래 벨만 포드는 cycle이 없는 경우를 전제로 하므로 정점의 수 - 1 만큼 반복하면 되지만, 정점의 수 만큼 반복하면서 마지막 n번째에서 cycle을 체크함
+
+`distance[T] = Math.min(distance[T] , distance[S] + w(S,T))`
+
+- T : 해당 간선이 도달하고자 하는 정점
+- S : 해당 간선의 시작점
+- w : 해당 간선의 가중치
+
+주의) distance 가 최대 6,000 * 10,000 이므로, distance는 long으로 선언해줘야 한다.
+
+벨만포드 코드 일부
+
+```java
+			long[] distance = new long[n+1]
+			//distance에 max 값으로 채워줌
+			for(int i=1;i<n+1;i++)distance[i]=Integer.MAX_VALUE;
+			
+			distance[start]=0;
+			
+			//cycle 체크를 위해 n번 반복. 
+			for(int i=0;i<n;i++) {
+				for(int j=0;j<maps.length;j++) {
+
+					Node a=maps[j];
+					
+					//distance가 MAX_VALUE보다 생길 수 있기 때문에 MAX_VALUE 이면 continue 해줌
+					if(distance[a.u]==Integer.MAX_VALUE)continue;
+					
+					// 더 짧은 경로가 존재한다면 업데이트
+					if(distance[a.v]>distance[a.u]+a.weight) {
+						if(i==n-1) { //n번째 반복했다면, 음수 순환이 존재한다는 뜻.
+							System.out.println(-1);
+							return false;
+						}
+						distance[a.v]=distance[a.u]+a.weight;
+					}
+				}
+			}
+```
