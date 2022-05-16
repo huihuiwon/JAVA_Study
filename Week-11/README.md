@@ -110,3 +110,46 @@ class Graph{
 ```
 
 → 시간을 줄이기 위해, for문을 통해 최소 distance 값을 찾는 대신 우선순위 큐를 이용해 최소 distance를 바로 뽑아낼 수도 있다.
+				     
+
+## 9370. 미확인 도착지
+				   
+- 예술가 한 쌍이 출발지 s 지점에서 어디로 이동했는지 찾아내라.
+- 예술가들은 목적지까지 최단거리로 이동.
+- g, h 교차로 사이에 있는 도로를 지나갔음.
+				       
+<br/>
+- 다익스트라를 두 번 진행
+1. 입력받은 그래프 그대로
+2. g — h 사이의 도로 길이가 0일 때
+<br/>
+				       
+**풀이**
+
+1번 2번 경우를 다익스트라를 통해 최단 길이 (distance[])를 구한 후, 
+
+`1번 distance = 2번 distance + (g — h 간의 도로 길이)`  이면 
+
+최단거리에 g — h  사이의 도로를 지날 때 최단거리가 되는 것이다.
+
+```java
+			int[] data1 = ga.dijkstra(s); //1번 다익스트라 호출
+			
+			//g,h 간 도로의 길이 0으로 업데이트.
+			ga.input(g, h, 0);
+			
+			int[] data2 = ga.dijkstra(s); //2번 다익스트라 호출
+			
+			//목적지 후보 end에 입력받음
+			int[] end=new int[t];
+			for(int j=0;j<t;j++) {
+				end[j]=Integer.parseInt(br.readLine());
+			}
+			Arrays.sort(end); //오름차순 정렬
+			
+			// data1 == data2 + g-h 길이 이면 출력
+			for(int j=0;j<t;j++) {
+				if(data1[end[j]]==data2[end[j]]+w) sb.append(end[j]+" ");
+			}
+			sb.append("\n");
+```				       
