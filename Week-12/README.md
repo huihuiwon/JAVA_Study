@@ -72,9 +72,10 @@ len = 0 부터 시작. memo 에 해당 index 길이만큼의 증가수열들 중
 
 arr = {5,6,7,1,2,3,4} 일 때 시뮬레이션
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/614695c4-e12c-4a6a-b7cf-582c50a75abe/Untitled.png)
+![image](https://user-images.githubusercontent.com/57666289/169760076-f5ff0954-4323-4eea-9923-26dcccf8e5ba.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95ae18f0-91c9-4561-961f-3de7133173f3/Untitled.png)
+![image](https://user-images.githubusercontent.com/57666289/169760092-4cb8937a-be95-423e-8d17-278e3ccaa080.png)
+
 
 이분탐색 하는 코드
 
