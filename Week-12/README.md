@@ -160,3 +160,91 @@ sb.insert(0, 넣을 데이터) 를 통해 뒤에 데이터를 추가하는게 �
 
 뒤에서부터 보면서 stack 에 담고, 다시 꺼내서 stringbuilder 에 추가
 
+
+</br>
+</br>
+
+## 숨바꼭질 4
+
+세 가지 이동 존재 (현재 위치 X)
+
+1. X-1 (뒤로이동)
+2. X+1 (앞으로 이동)
+3. 2*X (순간이동)
+
+
+**bfs를 통해 최단경로를 출력**
+- visited 배열을 넣어 이미 방문한 곳은 더 보지 않도록 한다.
+- bfs의 큐에는 배열을 넣게 해, {현재 위치, 현재까지 경로길이} 를 넣도록 한다
+    
+    `Queue<int[]> queue=new LinkedList<int[]>();`
+    
+- 역추적을 위해 dp 배열에 방문하려는 위치의 이전 위치를 저장하도록 한다.
+
+dp에 해당 위치 직전에 방문한 값을 넣어, 경로를 출력할 수 있게 한다.
+
+| 현재 위치 | 5 | 10 | 9 | 18 | 17 |
+| --- | --- | --- | --- | --- | --- |
+| dp (직전에 방문한 값) | -1 | 5 | 10 | 9 | 18 |
+
+dp 값이 출발위치일 때까지 탐색한다.
+
+그럼 stack에 17 → 18 → 9 → 10 → 5 순으로 넣게 되고, stack에서 꺼내면서 경로인 5 10 9 18 17 을 출력하게 됨
+
+bfs && 경로 출력 코드
+
+```java
+//bfs
+	public static int bfs(int n,int k) {
+		boolean[] visited=new boolean[100001];
+		StringBuilder sb =new StringBuilder();
+		int[] dp = new int[100001];
+		Stack<Integer> stack = new Stack<>();
+		Queue<int[]> queue=new LinkedList<int[]>();
+		
+		int answer=-1;
+		visited[n]=true;
+		queue.add(new int[] {n,0});
+		
+		while(!queue.isEmpty()) {
+			int[] now = queue.poll();
+			
+			
+			if(now[0]==k) { //도착
+				answer=now[1];
+
+				//경로의 길이와 경로를 출력한다.
+				sb.append(answer+"\n");
+				int z=now[0];
+				while(z!=n) {
+					stack.add(z);
+					z=dp[z];
+				}
+				stack.add(z);
+				while(!stack.isEmpty()) sb.append(stack.pop()+" ");
+				
+				System.out.println(sb);
+				break;
+			}
+			
+			//세 가지 이동에 대해 탐색
+			if(now[0]-1>=0&&visited[now[0]-1]==false) {
+				queue.add(new int[] {now[0]-1,now[1]+1});
+				visited[now[0]-1]=true;
+				dp[now[0]-1]=now[0];
+			}
+			if(now[0]+1<=100000&&visited[now[0]+1]==false) {
+				queue.add(new int[] {now[0]+1,now[1]+1});
+				visited[now[0]+1]=true;
+				dp[now[0]+1]=now[0];
+			}
+			if(now[0]*2<=100000&&visited[now[0]*2]==false) {
+				queue.add(new int[] {now[0]*2,now[1]+1});
+				visited[now[0]*2]=true;
+				dp[now[0]*2]=now[0];
+			}
+		}
+		return answer;
+	}
+```
+
