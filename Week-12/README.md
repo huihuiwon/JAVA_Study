@@ -21,7 +21,8 @@
 		int start=0;int end=0;
 		long sum=0;
 		
-		while(end<n) { //end가 n보다 작을때까지만 반복한다. end가 n-1만큼 왔는데 sum이 s보다 작다면 시작점을 늘려도 s보다 sum이 작음
+		while(end<n) { //end가 n보다 작을때까지만 반복한다.
+		// end가 n-1만큼 왔는데 sum이 s보다 작다면 시작점을 늘려도 s보다 sum이 작음
 			sum+=arr[end]; //합 구하기
 			
 			if(sum>=s) { //합이 s보다 크면
