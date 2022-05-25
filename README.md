@@ -27,3 +27,4 @@
 |10주차|[로또의최고순위와최저순위](https://programmers.co.kr/learn/courses/30/lessons/77484)|[카카오프렌즈컬러링북](https://programmers.co.kr/learn/courses/30/lessons/1829)|[단체사진찍기](https://programmers.co.kr/learn/courses/30/lessons/1835)
 |11주차|[최단경로](https://www.acmicpc.net/problem/1753)|[미확인 도착지](https://www.acmicpc.net/problem/9370)|[타임머신](https://www.acmicpc.net/problem/11657)
 |12주차|[부분합](https://www.acmicpc.net/problem/1806)|[가장 긴 증가하는 부분 수열 5](https://www.acmicpc.net/problem/14003)|[숨바꼭질 4](https://www.acmicpc.net/problem/13913)
+|13주차|[트리의 지름](https://www.acmicpc.net/problem/1967)|[트리 순회](https://www.acmicpc.net/problem/1991)|[다리 만들기 2](https://www.acmicpc.net/problem/17472)
