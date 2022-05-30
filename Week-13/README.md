@@ -158,3 +158,79 @@ public static void postorder(Node node) {
 		sb.append(node.data);
 	}
 ```
+
+
+## 다리 만들기 2
+
+### **조건**
+
+1. 다리는 직선 모양이다.
+2. 가로 다리면 두 섬에 가로로 연결되어 있어야 하고, 세로 다리면 두 섬에 세로로 연결되어 있어야 한다.
+3. 다리는 교차할 수 있다.
+
+### **과정**
+
+1. DFS 또는 BFS를 통해 섬들을 번호 매긴다. 
+2. BFS를 통해 섬들 간의 최단 길이의 다리를 구한다. (단 다리길이 ≥ 2)
+3. MST 알고리즘 (Kruskal, Prim) 을 통해 모든 섬을 잇는 최단 경로를 구한다.
+
+### 과정1
+
+- BFS를 이용해 섬들을 번호 매김
+
+### 과정2
+
+- BFS 를 통해 최단 길이의 다리 구함
+
+```java
+public static void bfs_bridge(int x,int y) {
+		Queue<int[]> queue = new LinkedList<int[]>();
+		int[] dx = {1,0,-1,0};
+		int[] dy = {0,1,0,-1};		
+		
+		for(int i=0;i<4;i++) { //한 방향으로만 나아가야함
+			
+			queue.add(new int[] {x,y,0});
+			
+			while(!queue.isEmpty()) {
+				int[] now = queue.poll();
+				
+				int cx=now[0]+dx[i];
+				int cy=now[1]+dy[i];
+				
+				if(cx>=0&&cx<n&&cy>=0&&cy<m) {
+					if(data[cx][cy]==0) {
+						queue.add(new int[] {cx,cy,now[2]+1});
+					}
+					else if(data[cx][cy] != data[x][y] && visited[cx][cy]) { //다른 곳에 도착하면
+						if(now[2]<2) continue;
+						
+						if(map[data[x][y]][data[cx][cy]]==0) map[data[x][y]][data[cx][cy]] = now[2];
+						else map[data[x][y]][data[cx][cy]]= Math.min(now[2], map[data[x][y]][data[cx][cy]]);
+						break;
+					}
+				}
+			}
+		}
+	
+	}
+```
+
+그 동안은 `while(!queue.isEmpty)` 안에서 `for(int i=0;i<4;i++)` 을 넣어 4방향에 대해 탐색하였는데, 한 방향에 대해서만 나아가야 하니까 4방향에 대해 확인하는 for문 안에 while문이 들어가야 한다.
+
+### 과정3
+
+- Kruskal 알고리즘을 통해 MST (최소신장트리) 찾기 ( Prim 도 가능)
+- kruskal 로 확인한 후, MST에 모든 섬이 포함되었는지 확인해야 한다.
+
+```java
+int curr=find(2);
+		for(int i=3;i<cnt+1;i++) {
+			if(find(i)!=curr) {
+				answer=0;
+				break;
+			}
+		}
+```
+
+다른 섬들이 처음 섬의 부모와 같은지 체크를 해준다. 만약 부모가 다른 섬이 존재하면, 최소신장트리가 아니라는 뜻이다.
