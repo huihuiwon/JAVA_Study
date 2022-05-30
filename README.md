@@ -28,3 +28,4 @@
 |11주차|[최단경로](https://www.acmicpc.net/problem/1753)|[미확인 도착지](https://www.acmicpc.net/problem/9370)|[타임머신](https://www.acmicpc.net/problem/11657)
 |12주차|[부분합](https://www.acmicpc.net/problem/1806)|[가장 긴 증가하는 부분 수열 5](https://www.acmicpc.net/problem/14003)|[숨바꼭질 4](https://www.acmicpc.net/problem/13913)
 |13주차|[트리의 지름](https://www.acmicpc.net/problem/1967)|[트리 순회](https://www.acmicpc.net/problem/1991)|[다리 만들기 2](https://www.acmicpc.net/problem/17472)
+|14주차|[우주신과의 교감](https://www.acmicpc.net/problem/1774)|[줄 세우기](https://www.acmicpc.net/problem/2252)|[최종 순위](https://www.acmicpc.net/problem/3665)
