@@ -57,3 +57,104 @@ public static int dfs(int now) {
 		return max1;
 	}
 ```
+
+## 트리 순회
+
+> 이진트리를 입력받아서 preorder, inorder , postorder 순회를 하는 문제
+> 
+
+</br>
+
+노드 클래스를 생성해 이진트리를 형성함
+
+```java
+class Node {
+	String data;
+	Node left;
+	Node right;
+	
+	public Node(String data) {
+		this.data = data;
+		this.left=null;
+		this.right=null;
+	}
+	
+	public void addLeft(Node left) {
+		this.left=left;
+	}
+	
+	public void addRight(Node right) {
+		this.right=right;
+	}	
+}
+```
+
+</br>
+
+HashMap 을 사용해서 (key는 노드 이름(String), value는 노드) 노드들을 입력받을 때 중복을 제거함
+
+```java
+HashMap<String, Node> map = new HashMap<String,Node>();
+
+for(int i=0;i<n;i++) {
+			String[] str=br.readLine().split(" ");
+			
+			if(map.get(str[0])==null) map.put(str[0], new Node(str[0]));
+			
+			Node now=map.get(str[0]);
+			
+			if(!str[1].equals(".")) {
+				map.put(str[1], new Node(str[1]));
+				now.addLeft(map.get(str[1]));
+			}
+			if(!str[2].equals(".")) {
+				map.put(str[2], new Node(str[2]));
+				now.addRight(map.get(str[2]));
+			}			
+		}
+```
+
+hashmap map 에 대해 map.get(node이름) 이 비어있으면 노드를 새로 추가하고, 비어있지 않으면 map.get(node이름) 해서 노드 간 연결을 해줌
+
+</br>
+
+### 순회방법
+
+- 재귀함수 사용
+- stringbuilder를 통해 출력값을 추가
+
+### preorder
+
+root → left → right
+
+```java
+public static void preorder(Node node) {
+		sb.append(node.data);
+		if(node.left!=null)preorder(node.left);
+		if(node.right!=null)preorder(node.right);
+	}
+```
+
+### inorder
+
+left → root → right
+
+```java
+public static void inorder(Node node) {
+		if(node.left!=null)inorder(node.left);
+		sb.append(node.data);
+		if(node.right!=null)inorder(node.right);
+	}
+```
+
+### postorder
+
+left → right → root
+
+```java
+public static void postorder(Node node) {
+		if(node.left!=null)postorder(node.left);
+		if(node.right!=null)postorder(node.right);
+		sb.append(node.data);
+	}
+```
